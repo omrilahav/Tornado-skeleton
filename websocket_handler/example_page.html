@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        var ws = new WebSocket("ws://localhost:8888/websocket");
+        ws.onopen = function() {
+           ws.send("Hello, world");
+        };
+        ws.onmessage = function (evt) {
+           document.write(evt.data);
+        };
+    </script>
+
+</body>
+</html>
