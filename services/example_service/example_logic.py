@@ -1,4 +1,4 @@
-from tornado_example.services.base_logic import BaseLogicAbstract
+from services.base_logic import BaseLogicAbstract
 
 
 class ExampleLogic(BaseLogicAbstract):
@@ -6,4 +6,4 @@ class ExampleLogic(BaseLogicAbstract):
         super(ExampleLogic, self).__init__(data_layer)
 
     def get(self):
-        return None
+        return self.data_layer.get_some_data()
